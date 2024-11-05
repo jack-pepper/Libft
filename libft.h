@@ -41,29 +41,29 @@ void	ft_bzero(void *s, size_t n); // OK!
 void	*ft_memcpy(void *dest, const void *src, size_t n); // OK!
 void	*ft_memmove(void *dest, const void *src, size_t n); // created
 size_t	ft_strlcpy(char *dest, const char *src, size_t size); // created
-size_t	ft_strlcat(char *dest, const char *src, size_t size); // created
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize); // created
 char	*ft_strchr(const char *s, int c); // OK but MISS HEADER!!!
 char	*ft_strrchr(const char *s, int c); // created
-int	ft_strncmp(const char *s1, const char *s2, size_t n); // created
+int	ft_strncmp(const char *s1, const char *s2, size_t n); // OK but MISS HEADER!!!
 void	*ft_memchr(const void *s, int c, size_t n); // OK but MISS HEADER!!!
-int	ft_memcmp(const void *s1, const void *s2, size_t n); // created
+int	ft_memcmp(const void *s1, const void *s2, size_t n); // OK!
 char	*ft_strdup(const char *s); // created
 
 /* FROM stdlib.h */
 void	*ft_calloc(size_t nmemb, size_t size); // created 
 
 /* ADDITIONAL FUNCTIONS */
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_substr(char const *s, unsigned int start, size_t len); // created
+char	*ft_strjoin(char const *s1, char const *s2); // created
+char	*ft_strtrim(char const *s1, char const *set); // created
 char	**ft_split(char const *s, char c);
-char	*ft_itoa(int n);
+char	*ft_itoa(int n); // created
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *)); // created
+void	ft_putchar_fd(char c, int fd); // created
+void	ft_putstr_fd(char *s, int fd); // created
+void	ft_putendl_fd(char *s, int fd); // created
+void	ft_putnbr_fd(int n, int fd); // created
 
 /* HANDLING LISTS */
 t_list	*ft_lstnew(void *content);
