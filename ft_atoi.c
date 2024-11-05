@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+#include <stdio.h>
+
+int			ft_atoi(const char *nptr);
+static		int	ft_isspace(int c);
+
 int	ft_atoi(const char *nptr)
 {
 	int	result;
@@ -37,4 +42,10 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	}
 	return (result * sign);
+}
+
+static int	ft_isspace(int c)
+{
+	return (c == 32 || c == '\f' || c == '\n'
+		|| c == '\r' || c == '\t' || c == '\v');
 }

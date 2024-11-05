@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIBFT_H
+#define LIBFT_H
+
 /* STANDARD LIBRARIES */
 #include <stdlib.h> // malloc
 #include <stddef.h> // size_t
@@ -22,32 +25,32 @@ typedef struct		s_list
 }			t_list;
 
 /* FROM ctype.h */
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isalnum(int c);
-int	ft_isascii(int c);
-int	ft_isprint(int c);
-int	ft_toupper(int c);
-int	ft_tolower(int c);
-int	ft_atoi(const char *nptr);
+int	ft_isalpha(int c); // OK!
+int	ft_isdigit(int c); // OK!
+int	ft_isalnum(int c); // OK!
+int	ft_isascii(int c); // OK!
+int	ft_isprint(int c); // OK but MISS HEADER!!!
+int	ft_toupper(int c); // OK but MISS HEADER!!!
+int	ft_tolower(int c); // OK but MISS HEADER!!!
+int	ft_atoi(const char *nptr); // OK!
 
 /* FROM string.h */
-size_t	ft_strlen;
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_bzero(void *s, int c, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memmove(void *dest, const void *src, size_t n);
-strlcpy
-size_t	ft_strlcat(char *dest, const char *src, size_t dstsize);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
-char	*ft_strdup(const char *s);
+size_t	ft_strlen(const char *s); // OK!
+void	*ft_memset(void *s, int c, size_t n); // OK!
+void	ft_bzero(void *s, size_t n); // OK!
+void	*ft_memcpy(void *dest, const void *src, size_t n); // OK!
+void	*ft_memmove(void *dest, const void *src, size_t n); // created
+size_t	ft_strlcpy(char *dest, const char *src, size_t size); // created
+size_t	ft_strlcat(char *dest, const char *src, size_t size); // created
+char	*ft_strchr(const char *s, int c); // OK but MISS HEADER!!!
+char	*ft_strrchr(const char *s, int c); // created
+int	ft_strncmp(const char *s1, const char *s2, size_t n); // created
+void	*ft_memchr(const void *s, int c, size_t n); // OK but MISS HEADER!!!
+int	ft_memcmp(const void *s1, const void *s2, size_t n); // created
+char	*ft_strdup(const char *s); // created
 
 /* FROM stdlib.h */
-void	*calloc(size_t nmemb, size_t size);
+void	*ft_calloc(size_t nmemb, size_t size); // created 
 
 /* ADDITIONAL FUNCTIONS */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -72,3 +75,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+#endif
