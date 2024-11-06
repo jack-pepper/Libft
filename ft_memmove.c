@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+void	*ft_memmove(void *dest, const void *src, size_t n);
+
+int	main(void)
+{
+	char	src[20] = "Hello world";
+	char	dest[20];
+
+	ft_memmove(dest, src, 5);
+	printf("Dest: %s", dest);
+}
+
 //  need to improve
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
@@ -22,21 +33,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		return (NULL);
 	}
-	
+	if (*temp != *src && temp != dest)
 	{
-		if (*temp != *src && temp != dest)
-		{
-			ft_memcpy(temp, src, n);
-			ft_memcpy(dest, temp, n);
-		}
+		ft_memcpy(temp, src, n);
+		ft_memcpy(dest, temp, n);
+	}
 	return (dest);
 }
 
-int	main(void)
-{
-	char	src[20] = "Hello world";
-	char	dest[20];
-
-	ft_memmove(dest, src, 5);
-	printf("Dest: %s", dest);
-}

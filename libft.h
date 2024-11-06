@@ -16,6 +16,7 @@
 /* STANDARD LIBRARIES */
 #include <stdlib.h> // malloc
 #include <stddef.h> // size_t
+#include <stdint.h>
 
 /* TYPEDEF */
 typedef struct		s_list
@@ -40,17 +41,17 @@ void	*ft_memset(void *s, int c, size_t n); // OK!
 void	ft_bzero(void *s, size_t n); // OK!
 void	*ft_memcpy(void *dest, const void *src, size_t n); // OK!
 void	*ft_memmove(void *dest, const void *src, size_t n); // created
-size_t	ft_strlcpy(char *dest, const char *src, size_t size); // created
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize); // created
+size_t	ft_strlcpy(char *dest, const char *src, size_t size); // OK but MISS HEADER!!!
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize); // OK but MISS HEADER!!!
 char	*ft_strchr(const char *s, int c); // OK but MISS HEADER!!!
-char	*ft_strrchr(const char *s, int c); // created
+char	*ft_strrchr(const char *s, int c); // ALMOST (check the mismatch)
 int	ft_strncmp(const char *s1, const char *s2, size_t n); // OK but MISS HEADER!!!
 void	*ft_memchr(const void *s, int c, size_t n); // OK but MISS HEADER!!!
 int	ft_memcmp(const void *s1, const void *s2, size_t n); // OK!
-char	*ft_strdup(const char *s); // created
+char	*ft_strdup(const char *s); // OK!
 
 /* FROM stdlib.h */
-void	*ft_calloc(size_t nmemb, size_t size); // created 
+void	*ft_calloc(size_t nmemb, size_t size); // OK but MISS HEADER!!! 
 
 /* ADDITIONAL FUNCTIONS */
 char	*ft_substr(char const *s, unsigned int start, size_t len); // created

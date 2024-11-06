@@ -15,20 +15,16 @@
 char	*ft_strdup(const char *s)
 {
 	char	*dup;
-	char	*dup_p;
+	char	*dup_start;
 	size_t	len;
 
 	if (s == NULL)
-	{
 		return (NULL);
-	}
 	len = ft_strlen(s);
 	dup = malloc(len + 1);
 	if (dup == NULL)
-	{
 		return (NULL);
-	}
-	dup_p = dup;
+	dup_start = dup;
 	while (*s)
 	{
 		*dup = *s;
@@ -36,5 +32,5 @@ char	*ft_strdup(const char *s)
 		s++;
 	}
 	*dup = '\0';
-	return (dup_p);
+	return (dup_start);
 }
