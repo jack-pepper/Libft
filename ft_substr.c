@@ -6,7 +6,7 @@
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:57:04 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 09:57:11 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/07 11:31:28 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substring = (char *)malloc(sizeof(char) * len + 1);
 	if (substring == NULL)
 	{
-		return NULL;
+		return (NULL);
 	}
 	i = 0;
 	while (i < len)
@@ -36,10 +36,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	substring[i] = '\0';
 	return (substring);
-}
-
-int	main(void)
-{
-	char	s[30] = "Hello dirty old silly world";
-	printf("Sub: %s", ft_substr(s, 6, 9));
 }

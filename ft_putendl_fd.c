@@ -6,11 +6,13 @@
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:35:17 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/04 15:35:19 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/07 11:03:23 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putendl_fd(char const *s, int fd)
+#include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
 {
 	if (s != NULL)
 	{

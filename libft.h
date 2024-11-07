@@ -6,7 +6,7 @@
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:25:28 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 10:00:06 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/07 12:01:53 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 /* STANDARD LIBRARIES */
 #include <stdlib.h> // malloc
 #include <stddef.h> // size_t
-#include <stdint.h>
+#include <stdint.h> 
+#include <unistd.h> // write
+#include <fcntl.h> // open...
 
 /* TYPEDEF */
 typedef struct		s_list
@@ -40,7 +42,7 @@ size_t	ft_strlen(const char *s); // OK!
 void	*ft_memset(void *s, int c, size_t n); // OK!
 void	ft_bzero(void *s, size_t n); // OK!
 void	*ft_memcpy(void *dest, const void *src, size_t n); // OK!
-void	*ft_memmove(void *dest, const void *src, size_t n); // created
+void	*ft_memmove(void *dest, const void *src, size_t n); // ALMOST (write tests)
 size_t	ft_strlcpy(char *dest, const char *src, size_t size); // OK!
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize); // OK!
 char	*ft_strchr(const char *s, int c); // OK!
@@ -54,17 +56,17 @@ char	*ft_strdup(const char *s); // OK!
 void	*ft_calloc(size_t nmemb, size_t size); // OK! 
 
 /* ADDITIONAL FUNCTIONS */
-char	*ft_substr(char const *s, unsigned int start, size_t len); // created
-char	*ft_strjoin(char const *s1, char const *s2); // created
+char	*ft_substr(char const *s, unsigned int start, size_t len); // OK!
+char	*ft_strjoin(char const *s1, char const *s2); // OK!
 char	*ft_strtrim(char const *s1, char const *set); // created
 char	**ft_split(char const *s, char c); // created
 char	*ft_itoa(int n); // created
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void	ft_striteri(char *s, void (*f)(unsigned int, char *)); // created
-void	ft_putchar_fd(char c, int fd); // created
-void	ft_putstr_fd(char *s, int fd); // created
-void	ft_putendl_fd(char *s, int fd); // created
-void	ft_putnbr_fd(int n, int fd); // created
+void	ft_striteri(char *s, void (*f)(unsigned int, char *)); // OK!
+void	ft_putchar_fd(char c, int fd); // OK!
+void	ft_putstr_fd(char *s, int fd); // OK!
+void	ft_putendl_fd(char *s, int fd); // OK!
+void	ft_putnbr_fd(int n, int fd); // OK!
 
 /* HANDLING LISTS */
 t_list	*ft_lstnew(void *content);

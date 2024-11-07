@@ -6,7 +6,7 @@
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:59:30 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 09:59:32 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/07 11:13:24 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,4 @@ void	ft_putnbr_fd(int n, int fd)
 
 	}
 	ft_putchar_fd((n % 10) + '0', fd);
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc != 1)
-	{
-		ft_putnbr_fd(atoi(argv[1]), atoi(argv[2]));
-	}
-	else
-	{
-		ft_putnbr_fd(42, 1);
-	}
-
 }

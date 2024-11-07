@@ -6,7 +6,7 @@
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:57:17 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 09:57:20 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/07 11:46:13 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		return (NULL);
 	}
-	ft_strcpy(joined_str, s1);
-	ft_strcat(joined_str, s2);
+	ft_strlcpy(joined_str, s1, len + 1);
+	ft_strlcat(joined_str, s2, len + 1);
 	return (joined_str);
 }
