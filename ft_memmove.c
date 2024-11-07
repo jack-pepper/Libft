@@ -6,38 +6,57 @@
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:35:00 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/04 15:35:02 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/07 09:55:39 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+#include <stdio.h>
+
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
 int	main(void)
 {
-	char	src[20] = "Hello world";
+	char	src[] = "Hello world";
 	char	dest[20];
 
 	ft_memmove(dest, src, 5);
-	printf("Dest: %s", dest);
-}
+	printf("Src pointer: %p - Dest pointer: %p - Dest: %s \n", src, dest, dest);
 
-//  need to improve
+	char	*dest2;
+	dest2 = src + 2;
+
+	ft_memmove(dest2, src, 5);
+	printf("Src pointer: %p - Dest2 pointer: %p - Dest2: %s \n", src, dest2, dest2);
+
+}
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	temp[n];
+	unsigned char		*dest_uc;
+	const unsigned char	*src_uc;
+	size_t				i;
 
-	if (src == NULL || dest == NULL)
+	i = 0;
+	dest_uc = (unsigned char *)dest;
+	src_uc = (const unsigned char *)src;
+	if (dest_uc < src_uc)
 	{
-		return (NULL);
+		while (i < n)
+		{
+			dest_uc[i] = src_uc[i];
+			i++;
+		}
 	}
-	if (*temp != *src && temp != dest)
+	else if (dest_uc > src_uc)
 	{
-		ft_memcpy(temp, src, n);
-		ft_memcpy(dest, temp, n);
+		i = n;
+		while (i > 0)
+		{
+			dest_uc[i] = src_uc[i];
+			i--;
+		}
 	}
 	return (dest);
 }
-
