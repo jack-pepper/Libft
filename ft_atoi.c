@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-#include <stdio.h>
-
 int			ft_atoi(const char *nptr);
 static		int	ft_isspace(int c);
 

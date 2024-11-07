@@ -12,50 +12,28 @@
 
 #include "libft.h"
 
-#include <stdio.h>
-
-void	*ft_memmove(void *dest, const void *src, size_t n);
-
-int	main(void)
-{
-	char	src[] = "Hello world";
-	char	dest[20];
-
-	ft_memmove(dest, src, 5);
-	printf("Src pointer: %p - Dest pointer: %p - Dest: %s \n", src, dest, dest);
-
-	char	*dest2;
-	dest2 = src + 2;
-
-	ft_memmove(dest2, src, 5);
-	printf("Src pointer: %p - Dest2 pointer: %p - Dest2: %s \n", src, dest2, dest2);
-
-}
-
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*dest_uc;
 	const unsigned char	*src_uc;
 	size_t				i;
 
-	i = 0;
+	if (dest == src || n == 0)
+		return (dest);
 	dest_uc = (unsigned char *)dest;
 	src_uc = (const unsigned char *)src;
 	if (dest_uc < src_uc)
 	{
-		while (i < n)
-		{
-			dest_uc[i] = src_uc[i];
-			i++;
-		}
+		while (n--)
+			*dest_uc++ = *src_uc;
 	}
 	else if (dest_uc > src_uc)
 	{
 		i = n;
 		while (i > 0)
 		{
-			dest_uc[i] = src_uc[i];
 			i--;
+			dest_uc[i] = src_uc[i];
 		}
 	}
 	return (dest);

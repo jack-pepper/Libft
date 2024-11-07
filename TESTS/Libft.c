@@ -527,13 +527,57 @@ OUTPUT:
 
 /* ft_memmove */
 ADD:
+#include <stdio.h>
 
+void    *ft_memmove(void *dest, const void *src, size_t n);
+
+int     main(void)
+{
+        char    src[] = "Hello world";
+        char    dest[20] = {0};
+
+        ft_memmove(dest, src, 5);
+        dest[5] = '\0';
+        printf("Src pointer: %p - Dest pointer: %p - Dest: \"%s\"\n", src, dest, dest);
+
+        char    *dest2;
+        dest2 = src + 2;
+        ft_memmove(dest2, src, 5);
+        dest2[5] = '\0';
+        printf("Src pointer: %p - Dest2 pointer: %p - Dest2: \"%s\"\n", src, dest2, dest2);
+}
 
 OUTPUT:
+Src pointer: 0x7ffd8228bcf4 - Dest pointer: 0x7ffd8228bd00 - Dest: "Hello"
+Src pointer: 0x7ffd8228bcf4 - Dest2 pointer: 0x7ffd8228bcf6 - Dest2: "Hello"
 
+/* ft_strrchr */
+ADD:
+#include <stdio.h>
 
+char    *ft_strrchr(const char *s, int c);
 
-/* */
+int     main(void)
+{
+        char    str[] = "Hello world";
+        char    empty[] = "";
+
+        printf("Start: %p - Last l: %p - Last char: %p - Null term: %p \n", str, str + 9, str + 10, str + 11);
+        printf("Empty string ('a'): %s \n", ft_strrchr(empty, 'a'));
+        printf("Empty string ('\\0'): %s - Pointer: %p \n", ft_strrchr(empty, '\0'), ft_strrchr(empty, '\0'));
+        printf("Result: %s - Pointer: %p \n", ft_strrchr(str, 'g'), ft_strrchr(str, 'g'));
+        printf("Result: %s - Pointer: %p \n", ft_strrchr(str, 'l'), ft_strrchr(str, 'l'));
+        printf("Result: %s - Pointer: %p \n", ft_strrchr(str, '\0'), ft_strrchr(str, '\0'));
+}
+
+OUTPUT:
+Start: 0x7fff36369d5c - Last l: 0x7fff36369d65 - Last char: 0x7fff36369d66 - Null term: 0x7fff36369d67
+Empty string ('a'): (null)
+Empty string ('\0'):  - Pointer: 0x7fff36369d5b
+Result: (null) - Pointer: (nil)
+Result: ld - Pointer: 0x7fff36369d65
+Result:  - Pointer: 0x7fff36369d67
+
 /* */
 /* */
 /* */

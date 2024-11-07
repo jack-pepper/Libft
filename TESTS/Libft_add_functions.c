@@ -163,7 +163,41 @@ int     main(void)
 OUTPUT:
 Hello WORLD
 
-/* ex17 */
+/* ft_strmapi */
+ADD:
+#include <stdio.h>
+
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char    half_eraser(unsigned int index, char c);
+
+int     main(void)
+{
+        char    s[] = "Hello world";
+        char    *res;
+
+        res = ft_strmapi(s, half_eraser);
+        if (res != NULL)
+        {
+                printf("Str: %s \n", res);
+                free(res);
+        }
+}
+
+char    half_eraser(unsigned int index, char c)
+{
+        if (index % 2 == 0)
+        {
+                return ('.');
+        }
+        else
+        {
+                return (c);
+        }
+}
+
+OUTPUT:
+Str: .e.l. .o.l.
+
 /* ex18 */
 /* ex19 */
 /* ex20 */
