@@ -6,10 +6,10 @@
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:58:07 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/08 10:11:52 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 12:08:44 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include "libft.h"
 
 char	*ft_itoa(int n)
@@ -71,3 +71,4 @@ int	main(void)
 	ft_putchar('\n');
 	ft_putstr(ft_itoa(-0));
 }
+*/

@@ -278,9 +278,9 @@ int	ft_isprint(int c)
 	return ((c >= 32) && (c <= 126));
 }
 
-ft_itoa.o/      0           0     0     644     2020      `
+ft_itoa.o/      0           0     0     644     2028      `
 !<arch>
-ft_itoa.c/      0           0     0     644     1952      `
+ft_itoa.c/      0           0     0     644     1959      `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -289,19 +289,19 @@ ft_itoa.c/      0           0     0     644     1952      `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:58:07 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 09:58:09 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 12:08:44 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include "libft.h"
 
 char	*ft_itoa(int n)
 {
-	char	*result_str;
-	size_t	i;
-	size_t	unsigned_n;
-	size_t	nb_of_digits;
-	int	sign;
+	char		*result_str;
+	size_t		i;
+	size_t		unsigned_n;
+	size_t		nb_of_digits;
+	int		sign;
 
 	sign = 1;
 	if (n < 0)
@@ -316,7 +316,6 @@ char	*ft_itoa(int n)
 		nb_of_digits++;
 		printf("Nb_of_digits: %ld \n", nb_of_digits);
 	}
-
 	if (sign < 0)
 	{
 		nb_of_digits++;
@@ -324,7 +323,6 @@ char	*ft_itoa(int n)
 	}
 	else
 		result_str = malloc(nb_of_digits + 1);
-	
 	if (result_str == NULL)
 		return (NULL);
 	
@@ -356,11 +354,13 @@ int	main(void)
 	ft_putchar('\n');
 	ft_putstr(ft_itoa(-0));
 }
-/0              0           0     0     644     1040      `
+*/
+
+/0              0           0     0     644     1058      `
 !<arch>
 //                                              18        `
 ft_lstadd_back.c/
-/0              0           0     0     644     893       `
+/0              0           0     0     644     911       `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -369,18 +369,18 @@ ft_lstadd_back.c/
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:01:58 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 10:01:59 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:01:03 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-
-/18             0           0     0     644     1042      `
+/18             0           0     0     644     1060      `
 !<arch>
 //                                              20        `
 ft_lstadd_front.c/
 
-/0              0           0     0     644     893       `
+/0              0           0     0     644     911       `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -389,15 +389,15 @@ ft_lstadd_front.c/
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:00:45 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 10:00:46 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:09:10 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-
-ft_lstclear.o/  0           0     0     644     962       `
+ft_lstclear.o/  0           0     0     644     980       `
 !<arch>
-ft_lstclear.c/  0           0     0     644     893       `
+ft_lstclear.c/  0           0     0     644     911       `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -406,15 +406,15 @@ ft_lstclear.c/  0           0     0     644     893       `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:02:26 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 10:02:27 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:01:21 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-
-ft_lstdelone.o/ 0           0     0     644     962       `
+ft_lstdelone.o/ 0           0     0     644     980       `
 !<arch>
-ft_lstdelone.c/ 0           0     0     644     893       `
+ft_lstdelone.c/ 0           0     0     644     911       `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -423,15 +423,15 @@ ft_lstdelone.c/ 0           0     0     644     893       `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:02:11 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 10:02:13 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:09:25 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-
-ft_lstiter.o/   0           0     0     644     962       `
+ft_lstiter.o/   0           0     0     644     980       `
 !<arch>
-ft_lstiter.c/   0           0     0     644     893       `
+ft_lstiter.c/   0           0     0     644     911       `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -440,15 +440,15 @@ ft_lstiter.c/   0           0     0     644     893       `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:02:38 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 10:02:39 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:25:13 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-
-ft_lstlast.o/   0           0     0     644     962       `
+ft_lstlast.o/   0           0     0     644     980       `
 !<arch>
-ft_lstlast.c/   0           0     0     644     893       `
+ft_lstlast.c/   0           0     0     644     911       `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -457,15 +457,15 @@ ft_lstlast.c/   0           0     0     644     893       `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:01:10 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 10:01:11 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:12:05 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-
-ft_lstmap.o/    0           0     0     644     962       `
+ft_lstmap.o/    0           0     0     644     980       `
 !<arch>
-ft_lstmap.c/    0           0     0     644     893       `
+ft_lstmap.c/    0           0     0     644     911       `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -474,15 +474,15 @@ ft_lstmap.c/    0           0     0     644     893       `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:02:49 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 10:02:50 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:04:57 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-
-ft_lstnew.o/    0           0     0     644     962       `
+ft_lstnew.o/    0           0     0     644     980       `
 !<arch>
-ft_lstnew.c/    0           0     0     644     893       `
+ft_lstnew.c/    0           0     0     644     911       `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -491,15 +491,15 @@ ft_lstnew.c/    0           0     0     644     893       `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:00:28 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 10:00:30 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:08:49 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-
-ft_lstsize.o/   0           0     0     644     962       `
+ft_lstsize.o/   0           0     0     644     980       `
 !<arch>
-ft_lstsize.c/   0           0     0     644     893       `
+ft_lstsize.c/   0           0     0     644     911       `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -508,15 +508,15 @@ ft_lstsize.c/   0           0     0     644     893       `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:01:01 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 10:01:02 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:24:52 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-
-ft_memalloc.o/  0           0     0     644     1160      `
+ft_memalloc.o/  0           0     0     644     1162      `
 !<arch>
-ft_memalloc.c/  0           0     0     644     1092      `
+ft_memalloc.c/  0           0     0     644     1093      `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -525,7 +525,7 @@ ft_memalloc.c/  0           0     0     644     1092      `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:34:27 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/04 15:34:29 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:13:43 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -534,6 +534,7 @@ ft_memalloc.c/  0           0     0     644     1092      `
 void	*ft_memalloc(size_t size)
 {
 	void	*fresh_mem;
+
 	fresh_mem = malloc(size);
 	if (fresh_mem == NULL)
 	{
@@ -542,6 +543,7 @@ void	*ft_memalloc(size_t size)
 	ft_memset(fresh_mem, 0, size);
 	return (fresh_mem);
 }
+
 ft_memchr.o/    0           0     0     644     1244      `
 !<arch>
 ft_memchr.c/    0           0     0     644     1175      `
@@ -781,7 +783,7 @@ ft_putnbr_fd.c/ 0           0     0     644     1160      `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:59:30 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 11:13:24 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:10:04 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -792,7 +794,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n == -2147483648)
 	{
 		ft_putstr_fd("-2147483648", fd);
-		return;
+		return ;
 	}
 	if (n < 0)
 	{
@@ -802,7 +804,6 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n > 9)
 	{
 		ft_putnbr_fd(n / 10, fd);
-
 	}
 	ft_putchar_fd((n % 10) + '0', fd);
 }
@@ -838,9 +839,9 @@ void	ft_putstr_fd(char *s, int fd)
 	}
 }
 
-ft_split.o/     0           0     0     644     982       `
+ft_split.o/     0           0     0     644     1852      `
 !<arch>
-ft_split.c/     0           0     0     644     913       `
+ft_split.c/     0           0     0     644     1784      `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -849,14 +850,63 @@ ft_split.c/     0           0     0     644     913       `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:57:39 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 09:58:01 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 12:08:22 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include "libft.h"
 
+#include <stdio.h>
 
+char	**ft_split(char const *s, char c);
 
+int	main(void)
+{
+	//char const	s[30] = "hello.world.how.are.you.doing";
+	char const	s2[30] = "hello.world.how.are.you.doing.";
+	//char const	s3[30] = "";
+	char const	s4[30] = "helloworldhowareyoudoing";
+
+	//printf("[0] %s", *(ft_split(s, '.')));
+	ft_split(s2, '.');
+	//ft_split(s3, '.');
+	ft_split(s4, '.');
+	ft_split(s4, 'w');
+	printf("OK");
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**array = NULL;
+	int	nb_of_substr;
+	int	str_i;
+	int	char_i;
+
+	nb_of_substr = 0;
+	while (*s)
+	{
+		if (*s == c)
+		{
+			nb_of_substr++;
+		}
+	}
+	array = malloc((nb_of_substr + 1) * sizeof(char *));
+	if (array == NULL)
+		return (NULL);
+	str_i = 0;
+	char_i = 0;
+	while (str_i < nb_of_substr)
+	{
+		while (s[char_i] != c)
+		{
+			ft_strlcpy(&array[str_i][char_i], s, 1);
+			char_i++; 
+		}
+		str_i++;
+	}
+	return (array);
+}
+*/
 ft_strchr.o/    0           0     0     644     1160      `
 !<arch>
 ft_strchr.c/    0           0     0     644     1091      `
@@ -930,9 +980,9 @@ char	*ft_strdup(const char *s)
 	*dup = '\0';
 	return (dup_start);
 }
-ft_striteri.o/  0           0     0     644     1124      `
+ft_striteri.o/  0           0     0     644     1126      `
 !<arch>
-ft_striteri.c/  0           0     0     644     1056      `
+ft_striteri.c/  0           0     0     644     1057      `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -941,7 +991,7 @@ ft_striteri.c/  0           0     0     644     1056      `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:35:37 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 12:01:26 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:05:23 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -951,7 +1001,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	if (s == NULL || f == NULL)
 	{
-		return;
+		return ;
 	}
 	while (*s)
 	{
@@ -959,6 +1009,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		s++;
 	}
 }
+
 ft_strjoin.o/   0           0     0     644     1360      `
 !<arch>
 ft_strjoin.c/   0           0     0     644     1292      `
@@ -1110,7 +1161,7 @@ size_t	ft_strlen(const char *s)
 }
 ft_strmapi.o/   0           0     0     644     1256      `
 !<arch>
-ft_strmapi.c/   0           0     0     644     1187      `
+ft_strmapi.c/   0           0     0     644     1188      `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -1119,7 +1170,7 @@ ft_strmapi.c/   0           0     0     644     1187      `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:58:26 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 09:58:27 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:24:25 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1127,7 +1178,7 @@ ft_strmapi.c/   0           0     0     644     1187      `
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*new_s;
+	char			*new_s;
 	unsigned int	i;
 
 	new_s = malloc(ft_strlen(s) + 1);
@@ -1142,8 +1193,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new_s[i] = '\0';
 	return (new_s);
 }
-
-
 ft_strncmp.o/   0           0     0     644     1188      `
 !<arch>
 ft_strncmp.c/   0           0     0     644     1119      `
@@ -1186,7 +1235,7 @@ ft_strrchr.c/   0           0     0     644     1174      `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:02:51 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 12:02:57 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:12:31 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1194,7 +1243,8 @@ ft_strrchr.c/   0           0     0     644     1174      `
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*last_char_found = NULL;	
+	const char	*last_char_found = NULL;
+
 	while (*s)
 	{
 		if ((unsigned char)*s == (unsigned char)c)
@@ -1209,9 +1259,9 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return ((char *)last_char_found);
 }
-ft_strtrim.o/   0           0     0     644     1734      `
+ft_strtrim.o/   0           0     0     644     1738      `
 !<arch>
-ft_strtrim.c/   0           0     0     644     1665      `
+ft_strtrim.c/   0           0     0     644     1670      `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -1220,10 +1270,10 @@ ft_strtrim.c/   0           0     0     644     1665      `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:36:00 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/04 15:36:03 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 12:09:02 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include "libft.h"
 
 // Faire plusieurs fonctions: ft_strtrim_start / ft_strstrim_end ?
@@ -1263,7 +1313,7 @@ int	main(void)
 	char	s[30] = "   Hey coucou  ";
 	printf("Str: %s", ft_strtrim(s));
 }
-
+*/
 ft_substr.o/    0           0     0     644     1398      `
 !<arch>
 ft_substr.c/    0           0     0     644     1329      `
