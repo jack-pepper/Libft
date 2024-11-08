@@ -1,27 +1,31 @@
-# Makefile intends to automatically produce the commands sequence needed to build the project.
-# It uses variables (starting with $) to make the file more manageable.
+### Makefile intends to automatically produce the commands sequence needed to build the project.
+### It uses variables (starting with $) to make the file more manageable.
 
-## An object file is a binary file created by the compiler as a transition before creating an executable.
+### An object file is a binary file created by the compiler as a transition before creating an executable.
 
-# Name of the executable obtained after compilation
+### Name of the executable obtained after compilation
 NAME = libft.a
 
-# Compilation settings
+### Compilation settings
+
 #CC=cc	# Compilator to use 
-CC=ar
 #CFLAGS=-Wall -Werror -Wextra # Compil flags
+
+CC=ar
+CFLAGS=rcs
+
 DEPS = libft.h # Dependencies
 
-# Source files
-SRC = ft_*.c
+### Source files
+SRC = $(wildcard ft_*.c)
 
-# Object files (replace the extensions)
+### Object files (replace the extensions)
 OBJ = $(SRC:.c=.o)
 
-# Default rules (compile the executable)
-all: $(NAME)
+### Default rules (compile the executable)
+all: $(NAME) clean
 
-# Rules to create an executable from object files
+### Rules to create an executable from object files
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
@@ -30,9 +34,8 @@ $(NAME): $(OBJ)
 # The -c flag asks the compiler not to link the files
 # and to produce only the object file.
 
-# NB! REMOVE THE -g debugger!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-%.o: %.c
-	$(CC) $(CFLAGS) -c -g $< -o $@ 
+# %.o: %.c
+#	$(CC) $(CFLAGS) -c $< -o $@ 
 
 # Rule to clean (remove) the object files
 clean:

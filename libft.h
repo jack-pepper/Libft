@@ -6,26 +6,26 @@
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:25:28 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 12:01:53 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:34:17 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
 /* STANDARD LIBRARIES */
-#include <stdlib.h> // malloc
-#include <stddef.h> // size_t
-#include <stdint.h> 
-#include <unistd.h> // write
-#include <fcntl.h> // open...
+# include <stdlib.h>
+# include <stddef.h>
+# include <stdint.h> 
+# include <unistd.h>
+# include <fcntl.h>
 
 /* TYPEDEF */
-typedef struct		s_list
+typedef struct s_list
 {
-	void		*content;
-	struct s_list	*next;
-}			t_list;
+	void			*content;
+	struct s_list		*next;
+}				t_list;
 
 /* FROM ctype.h */
 int	ft_isalpha(int c); // OK!

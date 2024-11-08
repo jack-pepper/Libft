@@ -6,7 +6,7 @@
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:58:07 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 09:58:09 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:11:52 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*ft_itoa(int n)
 {
-	char	*result_str;
-	size_t	i;
-	size_t	unsigned_n;
-	size_t	nb_of_digits;
-	int	sign;
+	char		*result_str;
+	size_t		i;
+	size_t		unsigned_n;
+	size_t		nb_of_digits;
+	int		sign;
 
 	sign = 1;
 	if (n < 0)
@@ -33,7 +33,6 @@ char	*ft_itoa(int n)
 		nb_of_digits++;
 		printf("Nb_of_digits: %ld \n", nb_of_digits);
 	}
-
 	if (sign < 0)
 	{
 		nb_of_digits++;
@@ -41,7 +40,6 @@ char	*ft_itoa(int n)
 	}
 	else
 		result_str = malloc(nb_of_digits + 1);
-	
 	if (result_str == NULL)
 		return (NULL);
 	

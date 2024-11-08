@@ -6,7 +6,7 @@
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:35:37 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/07 12:01:26 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 10:05:23 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	if (s == NULL || f == NULL)
 	{
-		return;
+		return ;
 	}
 	while (*s)
 	{
