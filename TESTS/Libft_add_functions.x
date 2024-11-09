@@ -198,7 +198,94 @@ char    half_eraser(unsigned int index, char c)
 OUTPUT:
 Str: .e.l. .o.l.
 
-/* ex18 */
+/* ft_split */
+ADD:
+#include <stdio.h>
+
+int     main(void)
+{
+        char const      s[60] = "hello.world.how.are.you.doing";
+        char const      s2[60] = "...hello.world.how.are.you.doing...";
+        char const      s3[60] = "";
+        char const      s4[60] = "helloworldhowareyoudoing";
+
+    // Test case 1: Splitting by '.'
+    printf("Test 1: Splitting by '.':\n");
+    char **result = ft_split(s, '.');
+    for (int i = 0; result[i] != NULL; i++) {
+        printf("Token %d: %s\n", i, result[i]);
+        free(result[i]);
+    }
+    free(result);
+
+    // Test case 2: Splitting by '.' with leading and trailing delimiters
+    printf("\nTest 2: Splitting by '.':\n");
+    result = ft_split(s2, '.');
+    for (int i = 0; result[i] != NULL; i++) {
+        printf("Token %d: %s\n", i, result[i]);
+        free(result[i]);
+    }
+    free(result);
+
+// Test case 3: Empty string
+    printf("\nTest 3: Splitting an empty string:\n");
+    result = ft_split(s3, '.');
+    if (result && result[0]) {
+        printf("Unexpected non-NULL result\n");
+    } else {
+        printf("Empty string handled correctly.\n");
+    }
+
+    // Test case 4: No delimiters (whole string as one token)
+    printf("\nTest 4: No delimiters (whole string as one token):\n");
+    result = ft_split(s4, '.');
+    for (int i = 0; result[i] != NULL; i++) {
+        printf("Token %d: %s\n", i, result[i]);
+        free(result[i]);
+    }
+    free(result);
+
+    // Test case 5: Splitting last string first with '.' and then with 'w'
+    printf("\nTest 5: Splitting last string with 'w':\n");
+    result = ft_split(s4, 'w');
+    for (int i = 0; result[i] != NULL; i++) {
+        printf("Token %d: %s\n", i, result[i]);
+        free(result[i]);
+    }
+
+ free(result);
+    return 0;
+}
+
+OUTPUT:
+Test 1: Splitting by '.':
+Token 0: hello
+Token 1: world
+Token 2: how
+Token 3: are
+Token 4: you
+Token 5: doing
+
+Test 2: Splitting by '.':
+Token 0: hello
+Token 1: world
+Token 2: how
+Token 3: are
+Token 4: you
+Token 5: doing
+
+Test 3: Splitting an empty string:
+Empty string handled correctly.
+
+Test 4: No delimiters (whole string as one token):
+Token 0: helloworldhowareyoudoing
+
+Test 5: Splitting last string with 'w':
+Token 0: hello
+Token 1: orldho
+Token 2: areyoudoing
+
+
 /* ex19 */
 /* ex20 */
 /* ex21 */

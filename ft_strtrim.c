@@ -18,11 +18,50 @@ char	*ft_strtrim(char const *s1, char const *set);
 
 int	main(void)
 {
-	char	s[30] = "   Hey coucou  ";
-	printf("Str: %s", ft_strtrim(s, " "));
+	char	s[30] = " .!  Hey coucou .! ";
+	printf("Str: %s", ft_strtrim(s, " !."));
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	len;
+	size_t	i;
+	int	set_len;
+
+	set_len = ft_strlen(set);
+	len = ft_strlen(s);
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		if (is_in_set(s1[i], set, set_len) == 1)
+		{
+			len--;
+			s++;
+		}
+	}
+
+}
+
+static int	is_in_set(char index, char const *set, int set_len)
+{
+	int	i;
+
+	i = 0;
+	while (i < set_len)
+	{
+		if (index == set[i])
+		{
+			return (1);
+		}
+		else
+		{
+			i++;
+		}
+	}
+	return (0);
+}
+
+/*char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trimmed_s;
 	size_t	start;
@@ -51,3 +90,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed_s[i] = '\0';
 	return (trimmed_s);
 }
+*/

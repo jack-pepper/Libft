@@ -9,9 +9,28 @@
 /*   Updated: 2024/11/08 12:08:44 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
+
 #include "libft.h"
 
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("[12345]: %s \n", ft_itoa(12345));
+	printf("[5]: %s \n", ft_itoa(5));	
+	printf("[-12345]: %s \n", ft_itoa(-12345));	
+	printf("[-5]: %s \n", ft_itoa(-5));
+	printf("[0]: %s \n", ft_itoa(0));
+	printf("[-0]: %s \n", ft_itoa(-0));
+}
+
+char	*ft_itoa(int n)
+{
+	
+
+}
+
+/*
 char	*ft_itoa(int n)
 {
 	char		*result_str;
@@ -20,10 +39,10 @@ char	*ft_itoa(int n)
 	size_t		nb_of_digits;
 	int		sign;
 
-	sign = 1;
-	if (n < 0)
-		sign = -1;
-	unsigned_n = n * sign;
+	//sign = 1;
+	//if (n < 0)
+	//	sign = -1;
+	//unsigned_n = n * sign;
 	nb_of_digits = 0;
 	if (n == 0)
 		nb_of_digits++;
@@ -31,7 +50,7 @@ char	*ft_itoa(int n)
 	{
 		unsigned_n = unsigned_n / 10;
 		nb_of_digits++;
-		printf("Nb_of_digits: %ld \n", nb_of_digits);
+		//printf("Nb_of_digits: %ld \n", nb_of_digits);
 	}
 	if (sign < 0)
 	{
@@ -42,7 +61,6 @@ char	*ft_itoa(int n)
 		result_str = malloc(nb_of_digits + 1);
 	if (result_str == NULL)
 		return (NULL);
-	
 	i = nb_of_digits;
 	unsigned_n = n * sign;
 	while (i > 0)
@@ -53,22 +71,7 @@ char	*ft_itoa(int n)
 	}
 	if (sign < 0)
 		result_str[0] = '-';
-	result_str[i + nb_of_digits] = 'E';
+	result_str[i + nb_of_digits] = '\0';
 	return (result_str);
-}
-
-int	main(void)
-{
-	ft_putstr(ft_itoa(12345));
-	ft_putchar('\n');
-	ft_putstr(ft_itoa(5));	
-	ft_putchar('\n');
-	ft_putstr(ft_itoa(-12345));	
-	ft_putchar('\n');
-	ft_putstr(ft_itoa(-5));
-	ft_putchar('\n');
-	ft_putstr(ft_itoa(0));
-	ft_putchar('\n');
-	ft_putstr(ft_itoa(-0));
 }
 */
