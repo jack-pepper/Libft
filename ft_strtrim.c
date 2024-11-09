@@ -12,82 +12,66 @@
 
 #include "libft.h"
 
-#include <stdio.h>
-
-char	*ft_strtrim(char const *s1, char const *set);
-
-int	main(void)
-{
-	char	s[30] = " .!  Hey coucou .! ";
-	printf("Str: %s", ft_strtrim(s, " !."));
-}
+char		*ft_strtrim(char const *s1, char const *set);
+static int	map(char const *s1, int s1_len, char const *set, int *start_i);
+static int	is_in_set(char c, char const *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len;
-	size_t	i;
-	int	set_len;
+	char	*trimmed_s;
+	int		trim_len;
+	int		start_i;
+	int		s1_len;
+	int		set_len;
 
+	s1_len = ft_strlen(s1);
 	set_len = ft_strlen(set);
-	len = ft_strlen(s);
-	i = 0;
-	while (s1[i] != '\0')
-	{
-		if (is_in_set(s1[i], set, set_len) == 1)
-		{
-			len--;
-			s++;
-		}
-	}
-
+	if (set_len == 0 || s1_len == 0)
+		return ((char *)s1);
+	start_i = 0;
+	trim_len = map(s1, s1_len, set, &start_i);
+	if (trim_len <= 0)
+		return (malloc(1));
+	trimmed_s = (char *)malloc(sizeof(char) * trim_len + 1);
+	if (trimmed_s == NULL)
+		return (NULL);
+	ft_strlcpy(trimmed_s, &s1[start_i], trim_len + 1);
+	return (trimmed_s);
 }
 
-static int	is_in_set(char index, char const *set, int set_len)
+static int	map(char const *s1, int s1_len, char const *set, int *start_i)
 {
-	int	i;
+	int	trim_len;
+	int	end_i;
 
-	i = 0;
-	while (i < set_len)
+	trim_len = s1_len;
+	if (is_in_set(s1[0], set) == 1)
 	{
-		if (index == set[i])
+		while (is_in_set(s1[*start_i], set) == 1)
 		{
+			trim_len--;
+			(*start_i)++;
+		}
+	}
+	end_i = s1_len - 1;
+	if (is_in_set(s1[end_i], set) == 1)
+	{
+		while (is_in_set(s1[end_i], set) == 1)
+		{
+			trim_len--;
+			end_i--;
+		}
+	}
+	return (trim_len);
+}
+
+static int	is_in_set(char c, char const *set)
+{
+	while (*set)
+	{
+		if (c == *set)
 			return (1);
-		}
-		else
-		{
-			i++;
-		}
+		set++;
 	}
 	return (0);
 }
-
-/*char	*ft_strtrim(char const *s1, char const *set)
-{
-	char	*trimmed_s;
-	size_t	start;
-	size_t	end;
-	size_t	len; // Can be suppressed... saves a couple of lines
-	size_t	i;
-
-	while (s1[start] == ' ' || s1[start] == '\n' || s1[start] == '\t')
-		start++;
-	end = start;
-	while (s1[end] != '\0')
-		end++;
-	end--;
-	while (end > start && (s1[end] == ' ' || s1[end] == '\n' || s1[end] == '\t'))
-		end--;
-	len = end - start + 1;
-	trimmed_s = (char *)malloc(sizeof(char) * len);
-	if (trimmed_s == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		trimmed_s[i] = s1[start + i];
-		i++;
-	}
-	trimmed_s[i] = '\0';
-	return (trimmed_s);
-}
-*/

@@ -286,7 +286,25 @@ Token 1: orldho
 Token 2: areyoudoing
 
 
-/* ex19 */
+/* ft_strtrim */
+ADD: 
+#include <stdio.h>
+
+int     main(void)
+{
+        char    s[30] = " . ..!  Hey coucou .!! ";
+        char    s2[3] = "";
+
+        printf("Str: \"%s\" \n", ft_strtrim(s, " !."));
+        printf("Empty str: \"%s\" \n", ft_strtrim(s2, " !."));
+        printf("Empty set: \"%s\" \n", ft_strtrim(s, ""));
+}
+
+OUTPUT:
+Str: "Hey coucou" 
+Empty str: "" 
+Empty set: " . ..!  Hey coucou .!! " 
+
 /* ex20 */
 /* ex21 */
 /* ex22 */
