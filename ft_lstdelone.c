@@ -11,3 +11,21 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+
+int	main(void)
+{
+	ft_lstdelone(lst, &del)
+}
+
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+
+}
+
+void	del(void *)
+{
+
+}

@@ -278,9 +278,9 @@ int	ft_isprint(int c)
 	return ((c >= 32) && (c <= 126));
 }
 
-ft_itoa.o/      0           0     0     644     2028      `
+ft_itoa.o/      0           0     0     644     2072      `
 !<arch>
-ft_itoa.c/      0           0     0     644     1959      `
+ft_itoa.c/      0           0     0     644     2004      `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -292,70 +292,72 @@ ft_itoa.c/      0           0     0     644     1959      `
 /*   Updated: 2024/11/08 12:08:44 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
+
 #include "libft.h"
+
+char		*ft_itoa(int n);
+static int	get_sign(int n);
+static int	get_nb_digits(int uns_n);
+static void	copy_nb_to_str(char *dest, int uns_nb, int nb_digits, int sign);
 
 char	*ft_itoa(int n)
 {
-	char		*result_str;
-	size_t		i;
-	size_t		unsigned_n;
-	size_t		nb_of_digits;
+	char	*result_str;
 	int		sign;
+	int		uns_n;
+	int		nb_digits;
 
-	sign = 1;
+	if (n == 0 || n == -0)
+		return ("0");
+	sign = get_sign(n);
+	uns_n = n * sign;
+	nb_digits = get_nb_digits(uns_n);
 	if (n < 0)
-		sign = -1;
-	unsigned_n = n * sign;
-	nb_of_digits = 0;
-	if (n == 0)
-		nb_of_digits++;
-	while (unsigned_n > 0)
-	{
-		unsigned_n = unsigned_n / 10;
-		nb_of_digits++;
-		printf("Nb_of_digits: %ld \n", nb_of_digits);
-	}
-	if (sign < 0)
-	{
-		nb_of_digits++;
-		result_str = malloc(nb_of_digits + 2);
-	}
-	else
-		result_str = malloc(nb_of_digits + 1);
+		nb_digits++;
+	result_str = (char *)malloc(sizeof(char) * (nb_digits + 1));
 	if (result_str == NULL)
 		return (NULL);
-	
-	i = nb_of_digits;
-	unsigned_n = n * sign;
-	while (i > 0)
-	{
-		result_str[i - 1] = (unsigned_n % 10) + '0';
-		unsigned_n = unsigned_n / 10;
-		i--;
-	}
-	if (sign < 0)
-		result_str[0] = '-';
-	result_str[i + nb_of_digits] = 'E';
+	copy_nb_to_str(result_str, uns_n, nb_digits, sign);
 	return (result_str);
 }
 
-int	main(void)
+static int	get_sign(int n)
 {
-	ft_putstr(ft_itoa(12345));
-	ft_putchar('\n');
-	ft_putstr(ft_itoa(5));	
-	ft_putchar('\n');
-	ft_putstr(ft_itoa(-12345));	
-	ft_putchar('\n');
-	ft_putstr(ft_itoa(-5));
-	ft_putchar('\n');
-	ft_putstr(ft_itoa(0));
-	ft_putchar('\n');
-	ft_putstr(ft_itoa(-0));
+	if (n < 0)
+		return (-1);
+	else
+		return (1);
 }
-*/
 
+static int	get_nb_digits(int uns_n)
+{
+	int	nb_digits;
+
+	nb_digits = 1;
+	while (uns_n > 9)
+	{
+		uns_n = uns_n / 10;
+		nb_digits++;
+	}
+	return (nb_digits);
+}
+
+static void	copy_nb_to_str(char *dest, int uns_nb, int nb_digits, int sign)
+{
+	int	i;
+
+	i = nb_digits;
+	while (uns_nb > 9)
+	{
+		i--;
+		dest[i] = (uns_nb % 10) + '0';
+		uns_nb = uns_nb / 10;
+	}
+	dest[i - 1] = uns_nb + '0';
+	if (sign < 0)
+		dest[0] = '-';
+	dest[nb_digits] = '\0';
+}
 /0              0           0     0     644     1058      `
 !<arch>
 //                                              18        `
@@ -480,9 +482,9 @@ ft_lstmap.c/    0           0     0     644     911       `
 
 #include "libft.h"
 
-ft_lstnew.o/    0           0     0     644     980       `
+ft_lstnew.o/    0           0     0     644     1584      `
 !<arch>
-ft_lstnew.c/    0           0     0     644     911       `
+ft_lstnew.c/    0           0     0     644     1516      `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -491,12 +493,43 @@ ft_lstnew.c/    0           0     0     644     911       `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 10:00:28 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/08 10:08:49 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 12:41:58 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+#include <stdio.h>
+
+t_list	*ft_lstnew(void *content);
+
+int	main(void)
+{
+	t_list	*node;
+	t_list	*node2;
+
+	// Case 1: str
+	node = ft_lstnew("Thanks for the fish");
+	printf("Content: %s - Next: %p \n", (char *)node->content, node->next);
+	free(node);	
+
+	// Case 2: int
+	int	nb;
+	nb = 42;
+	node2 = ft_lstnew(&nb);
+	printf("Content: %ls - Next: %p \n", (int *)node2->content, node2->next);
+}
+
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*new_node;
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
+}
 ft_lstsize.o/   0           0     0     644     980       `
 !<arch>
 ft_lstsize.c/   0           0     0     644     911       `
@@ -839,9 +872,9 @@ void	ft_putstr_fd(char *s, int fd)
 	}
 }
 
-ft_split.o/     0           0     0     644     1852      `
+ft_split.o/     0           0     0     644     2584      `
 !<arch>
-ft_split.c/     0           0     0     644     1784      `
+ft_split.c/     0           0     0     644     2515      `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -853,60 +886,99 @@ ft_split.c/     0           0     0     644     1784      `
 /*   Updated: 2024/11/08 12:08:22 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
+
 #include "libft.h"
 
-#include <stdio.h>
-
-char	**ft_split(char const *s, char c);
-
-int	main(void)
-{
-	//char const	s[30] = "hello.world.how.are.you.doing";
-	char const	s2[30] = "hello.world.how.are.you.doing.";
-	//char const	s3[30] = "";
-	char const	s4[30] = "helloworldhowareyoudoing";
-
-	//printf("[0] %s", *(ft_split(s, '.')));
-	ft_split(s2, '.');
-	//ft_split(s3, '.');
-	ft_split(s4, '.');
-	ft_split(s4, 'w');
-	printf("OK");
-}
+char		**ft_split(char const *s, char c);
+static int	count_tokens(char const *s, char delim);
+static char	**store_tokens(char const *s, char delim, char **array);
+static char	**malloc_storage(char **array, int i, int token_len);
 
 char	**ft_split(char const *s, char c)
 {
-	char	**array = NULL;
-	int	nb_of_substr;
-	int	str_i;
-	int	char_i;
+	char	**array;
+	int		nb_tokens;
 
-	nb_of_substr = 0;
-	while (*s)
-	{
-		if (*s == c)
-		{
-			nb_of_substr++;
-		}
-	}
-	array = malloc((nb_of_substr + 1) * sizeof(char *));
+	array = NULL;
+	nb_tokens = count_tokens(s, c);
+	array = (char **)malloc((nb_tokens + 1) * sizeof(char *));
 	if (array == NULL)
 		return (NULL);
-	str_i = 0;
-	char_i = 0;
-	while (str_i < nb_of_substr)
+	store_tokens(s, c, array);
+	return (array);
+}
+
+static int	count_tokens(char const *s, char delim)
+{
+	int	nb_tokens;
+	int	i;
+
+	nb_tokens = 0;
+	i = 0;
+	while (s[i] != '\0')
 	{
-		while (s[char_i] != c)
+		while (s[i] == delim && s[i] != '\0')
 		{
-			ft_strlcpy(&array[str_i][char_i], s, 1);
-			char_i++; 
+			i++;
 		}
-		str_i++;
+		if (s[i] != delim && s[i] != '\0')
+		{
+			nb_tokens++;
+			while (s[i] != delim && s[i] != '\0')
+			{
+				i++;
+			}
+		}
+	}
+	return (nb_tokens);
+}
+
+static char	**store_tokens(char const *s, char delim, char **array)
+{
+	int	i;
+	int	j;
+	int	token_len;
+
+	i = 0;
+	j = 0;
+	while (s[j] != '\0')
+	{
+		while (s[j] == delim && s[j] != '\0')
+			j++;
+		if (s[j] != delim && s[j] != '\0')
+		{
+			token_len = 0;
+			while (s[j + token_len] != delim && s[j + token_len] != '\0')
+				token_len++;
+			array = malloc_storage(array, i, token_len);
+			ft_strlcpy(array[i], &s[j], token_len + 1);
+			j += token_len;
+			i++;
+		}
+	}
+	array[i] = NULL;
+	return (array);
+}
+
+static char	**malloc_storage(char **array, int i, int token_len)
+{
+	int	j;
+
+	array[i] = (char *)malloc((token_len + 1) * sizeof(char));
+	if (array[i] == NULL)
+	{
+		j = 0;
+		while (j < i)
+		{
+			free(array[j]);
+			j++;
+		}
+		free(array);
+		return (NULL);
 	}
 	return (array);
 }
-*/
+
 ft_strchr.o/    0           0     0     644     1160      `
 !<arch>
 ft_strchr.c/    0           0     0     644     1091      `
@@ -1259,9 +1331,9 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return ((char *)last_char_found);
 }
-ft_strtrim.o/   0           0     0     644     1738      `
+ft_strtrim.o/   0           0     0     644     2204      `
 !<arch>
-ft_strtrim.c/   0           0     0     644     1670      `
+ft_strtrim.c/   0           0     0     644     2136      `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -1270,50 +1342,75 @@ ft_strtrim.c/   0           0     0     644     1670      `
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:36:00 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/08 12:09:02 by mmalie           ###   ########.fr       */
+/*   Updated: 2024/11/08 12:25:06 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
+
 #include "libft.h"
 
-// Faire plusieurs fonctions: ft_strtrim_start / ft_strstrim_end ?
+char		*ft_strtrim(char const *s1, char const *set);
+static int	map(char const *s1, int s1_len, char const *set, int *start_i);
+static int	is_in_set(char c, char const *set);
 
-char	*ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trimmed_s;
-	size_t	start;
-	size_t	end;
-	size_t	len; // Can be suppressed... saves a couple of lines
-	size_t	i;
+	int		trim_len;
+	int		start_i;
+	int		s1_len;
+	int		set_len;
 
-	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
-		start++;
-	end = start;
-	while (s[end] != '\0')
-		end++;
-	end--;
-	while (end > start && (s[end] == ' ' || s[end] == '\n' || s[end] == '\t'))
-		end--;
-	len = end - start + 1;
-	trimmed_s = (char *)malloc(sizeof(char) * len);
+	s1_len = ft_strlen(s1);
+	set_len = ft_strlen(set);
+	if (set_len == 0 || s1_len == 0)
+		return ((char *)s1);
+	start_i = 0;
+	trim_len = map(s1, s1_len, set, &start_i);
+	if (trim_len <= 0)
+		return (malloc(1));
+	trimmed_s = (char *)malloc(sizeof(char) * trim_len + 1);
 	if (trimmed_s == NULL)
 		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		trimmed_s[i] = s[start + i];
-		i++;
-	}
-	trimmed_s[i] = '\0';
+	ft_strlcpy(trimmed_s, &s1[start_i], trim_len + 1);
 	return (trimmed_s);
 }
 
-int	main(void)
+static int	map(char const *s1, int s1_len, char const *set, int *start_i)
 {
-	char	s[30] = "   Hey coucou  ";
-	printf("Str: %s", ft_strtrim(s));
+	int	trim_len;
+	int	end_i;
+
+	trim_len = s1_len;
+	if (is_in_set(s1[0], set) == 1)
+	{
+		while (is_in_set(s1[*start_i], set) == 1)
+		{
+			trim_len--;
+			(*start_i)++;
+		}
+	}
+	end_i = s1_len - 1;
+	if (is_in_set(s1[end_i], set) == 1)
+	{
+		while (is_in_set(s1[end_i], set) == 1)
+		{
+			trim_len--;
+			end_i--;
+		}
+	}
+	return (trim_len);
 }
-*/
+
+static int	is_in_set(char c, char const *set)
+{
+	while (*set)
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
+	return (0);
+}
 ft_substr.o/    0           0     0     644     1398      `
 !<arch>
 ft_substr.c/    0           0     0     644     1329      `

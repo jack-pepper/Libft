@@ -1,24 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmalie <mmalie@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 10:00:28 by mmalie            #+#    #+#             */
-/*   Updated: 2024/11/08 12:41:58 by mmalie           ###   ########.fr       */
+/*   Created: 2024/11/07 09:58:07 by mmalie            #+#    #+#             */
+/*   Updated: 2024/11/08 12:08:44 by mmalie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	t_list	*new_node;
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (new_node == NULL)
-		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	size_t	i;
+	size_t	j;
+
+	if (!little || little[0] == '\0')
+	{
+		return ((char *)big);
+	}
+	i = 0;
+	while (big[i] != '\0' || i <= len)
+	{
+		if (big[i] == little[0])
+		{
+			j = 0;
+			while (big[i + j] == little[j] && little[j] != '\0')
+			{
+				j++;
+			}
+			if (little[j] == '\0')
+			{
+				return ((char *)&big[i]);
+			}
+		}
+		i++;
+	}
+	return (NULL);
 }
