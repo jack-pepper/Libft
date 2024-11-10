@@ -12,66 +12,66 @@
 
 #include "libft.h"
 
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("[12345]: %s \n", ft_itoa(12345));
-	printf("[5]: %s \n", ft_itoa(5));	
-	printf("[-12345]: %s \n", ft_itoa(-12345));	
-	printf("[-5]: %s \n", ft_itoa(-5));
-	printf("[0]: %s \n", ft_itoa(0));
-	printf("[-0]: %s \n", ft_itoa(-0));
-}
+char		*ft_itoa(int n);
+static int	get_sign(int n);
+static int	get_nb_digits(int uns_n);
+static void	copy_nb_to_str(char *dest, int uns_nb, int nb_digits, int sign);
 
 char	*ft_itoa(int n)
 {
-	
-
-}
-
-/*
-char	*ft_itoa(int n)
-{
-	char		*result_str;
-	size_t		i;
-	size_t		unsigned_n;
-	size_t		nb_of_digits;
+	char	*result_str;
 	int		sign;
+	int		uns_n;
+	int		nb_digits;
 
-	//sign = 1;
-	//if (n < 0)
-	//	sign = -1;
-	//unsigned_n = n * sign;
-	nb_of_digits = 0;
-	if (n == 0)
-		nb_of_digits++;
-	while (unsigned_n > 0)
-	{
-		unsigned_n = unsigned_n / 10;
-		nb_of_digits++;
-		//printf("Nb_of_digits: %ld \n", nb_of_digits);
-	}
-	if (sign < 0)
-	{
-		nb_of_digits++;
-		result_str = malloc(nb_of_digits + 2);
-	}
-	else
-		result_str = malloc(nb_of_digits + 1);
+	if (n == 0 || n == -0)
+		return ("0");
+	sign = get_sign(n);
+	uns_n = n * sign;
+	nb_digits = get_nb_digits(uns_n);
+	if (n < 0)
+		nb_digits++;
+	result_str = (char *)malloc(sizeof(char) * (nb_digits + 1));
 	if (result_str == NULL)
 		return (NULL);
-	i = nb_of_digits;
-	unsigned_n = n * sign;
-	while (i > 0)
-	{
-		result_str[i - 1] = (unsigned_n % 10) + '0';
-		unsigned_n = unsigned_n / 10;
-		i--;
-	}
-	if (sign < 0)
-		result_str[0] = '-';
-	result_str[i + nb_of_digits] = '\0';
+	copy_nb_to_str(result_str, uns_n, nb_digits, sign);
 	return (result_str);
 }
-*/
+
+static int	get_sign(int n)
+{
+	if (n < 0)
+		return (-1);
+	else
+		return (1);
+}
+
+static int	get_nb_digits(int uns_n)
+{
+	int	nb_digits;
+
+	nb_digits = 1;
+	while (uns_n > 9)
+	{
+		uns_n = uns_n / 10;
+		nb_digits++;
+	}
+	return (nb_digits);
+}
+
+static void	copy_nb_to_str(char *dest, int uns_nb, int nb_digits, int sign)
+{
+	int	i;
+
+	i = nb_digits;
+	while (uns_nb > 9)
+	{
+		i--;
+		dest[i] = (uns_nb % 10) + '0';
+		uns_nb = uns_nb / 10;
+	}
+	dest[i - 1] = uns_nb + '0';
+	if (sign < 0)
+		dest[0] = '-';
+	dest[nb_digits] = '\0';
+}
