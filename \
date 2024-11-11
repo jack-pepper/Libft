@@ -26,30 +26,24 @@ char	*ft_itoa(int n)
 	int		nb_digits;
 
 	result_str = NULL;
-	if (n == 0 || n == -0 || n == -2147483648)
-	{
-		result_str = handle_special_cases(result_str, n);
-		if (result_str == NULL)
-			return (NULL);
-		return (result_str);
-	}
+	result_str = handle_special_cases(result_str, n);
+	if (result_str == NULL)
+		return (NULL);
 	sign = get_sign(n);
 	uns_n = n * sign;
 	nb_digits = get_nb_digits(uns_n);
 	if (n < 0)
 		nb_digits++;
-	result_str = (char *)malloc(sizeof(char) * (nb_digits + 1));
-	if (result_str == NULL)
-		return (NULL);
+	result_str = malloc_manager(result_str, nb_digits, "");
 	copy_nb_to_str(result_str, uns_n, nb_digits, sign);
 	return (result_str);
 }
 
 static char	*handle_special_cases(char *array, int n)
 {
-	char	*int_min;
+	int	i;
+	char	int_min[] = "2147483648";
 
-	int_min = "-2147483648";
 	if (n == 0 || n == -0)
 	{
 		array = (char *)malloc(sizeof(char) * (1 + 1));
@@ -63,8 +57,13 @@ static char	*handle_special_cases(char *array, int n)
 		array = (char *)malloc(sizeof(char) * (11 + 1));
 		if (array == NULL)
 			return (NULL);
-		ft_strlcpy(array, int_min, 12);
-		array[11] = '\0';
+		i = 0;
+		while (int_min[i] != '\0')
+		{
+			array[i] = int_min[i];
+			i++;
+		}
+		array[i] = '\0';
 	}
 	return (array);
 }

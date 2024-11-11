@@ -305,7 +305,29 @@ Str: "Hey coucou"
 Empty str: "" 
 Empty set: " . ..!  Hey coucou .!! " 
 
-/* ex20 */
+/* ft_itoa */
+ADD:
+#include <stdio.h>
+
+int     main(void)
+{
+        printf("[12345]: \"%s\" \n", ft_itoa(12345));
+        printf("[5]: \"%s\" \n", ft_itoa(5));   
+        printf("[-12345]: \"%s\" \n", ft_itoa(-12345)); 
+        printf("[-5]: \"%s\" \n", ft_itoa(-5));
+        printf("[0]: \"%s\" \n", ft_itoa(0));
+        printf("[-0]: \"%s\" \n", ft_itoa(-0));
+}
+
+OUTPUT:
+[12345]: "12345" 
+[5]: "5" 
+[-12345]: "-12345" 
+[-5]: "-5" 
+[0]: "0" 
+[-0]: "0" 
+
+
 /* ex21 */
 /* ex22 */
 /* ex23 */
