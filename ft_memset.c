@@ -11,6 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+/* 
+ * Implementation of memset() from <string.h>: Fills a block of memory 
+ * with a specified value.
+ */
 
 void	*ft_memset(void *s, int c, size_t n)
 {

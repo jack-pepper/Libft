@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of strlcpy() from <string.h>: Safely copies a string 
+ * to a destination buffer, ensuring null-termination without buffer overflow.
+ */
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	src_len;

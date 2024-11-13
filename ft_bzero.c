@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of bzero() from <string.h>: Sets a block of memory to zero 
+ * (equivalent to memset(ptr, 0, n)).
+ */
 void	ft_bzero(void *s, size_t n)
 {
 	char	*s_p;

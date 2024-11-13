@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Writes a string to a specified file descriptor.
+ */
 void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;

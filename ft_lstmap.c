@@ -11,7 +11,11 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+ * Creates a new linked list by applying a function to each element of an 
+ * existing list, while handling memory deallocation with the provided 
+ * del function in case of failure.
+ */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;

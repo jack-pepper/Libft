@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of strlcat() from <string.h>: Concatenates two strings, 
+ * ensuring the destination buffer is null-terminated and doesn’t overflow.
+ */
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dst_len;

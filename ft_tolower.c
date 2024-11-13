@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of tolower() from <ctype.h>: Converts an uppercase character 
+ * to lowercase.
+*/
 int	ft_tolower(int c)
 {
 	if ((c >= 'A') && (c <= 'Z'))

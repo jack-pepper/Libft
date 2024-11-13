@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of strnstr() from <string.h>: Finds the first occurrence of 
+ * a substring in a string, checking up to n characters.
+ */
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;

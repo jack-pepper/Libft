@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Extracts a substring from a given string, starting from a specified index 
+ * and up to a specified length.
+ */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char				*substring;

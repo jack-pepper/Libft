@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of memchr() from <string.h>: Searches for the first 
+ * occurrence of a byte in a block of memory.
+ */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*s_p;

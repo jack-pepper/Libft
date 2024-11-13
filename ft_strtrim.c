@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Trims the characters of a given set from the beginning and end of a string.
+*/
 char		*ft_strtrim(char const *s1, char const *set);
 static int	map(char const *s1, int s1_len, char const *set, int *start_i);
 static int	is_in_set(char c, char const *set);

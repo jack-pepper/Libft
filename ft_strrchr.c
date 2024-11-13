@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of strrchr() from <string.h>: Searches for the last 
+ * occurrence of a character in a string.
+ */
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*last_char_found = NULL;

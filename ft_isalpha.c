@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of isalpha() from <ctype.h>: Checks if the given character 
+ * is an alphabetic letter (either uppercase or lowercase).
+ */
 int	ft_isalpha(int c)
 {
 	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));

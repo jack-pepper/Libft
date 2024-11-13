@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Converts an integer to a dynamically allocated string representation.
+ */
 char		*ft_itoa(int n);
 static int	get_sign(int n);
 static int	get_nb_digits(int uns_n);

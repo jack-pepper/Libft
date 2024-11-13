@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Clears a linked list by deleting all nodes and freeing their content 
+ * using the provided del function.
+ */
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;

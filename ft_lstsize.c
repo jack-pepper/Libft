@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Returns the number of nodes in a linked list.
+ */
 int	ft_lstsize(t_list *lst)
 {
 	int	lst_size;

@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of calloc() from <stdlib.h>: Allocates memory for an array 
+ * of elements and initializes all bytes to zero.
+ */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*array;

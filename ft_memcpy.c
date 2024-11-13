@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of memcpy() from <string.h>:
+ * Copies a specified number of bytes from one memory location to another.
+ */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char	*dest_p;

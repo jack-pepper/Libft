@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of strlen() from <string.h>: Returns the length 
+ * of the given string (excluding the null terminator).
+*/
 size_t	ft_strlen(const char *s)
 {
 	const char	*str;

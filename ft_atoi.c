@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of atoi() from <stdlib.h>: Converts a string to an integer, 
+ * stopping at the first non-numeric character.
+ */
 int			ft_atoi(const char *nptr);
 static		int	ft_isspace(int c);
 

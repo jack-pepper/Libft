@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of isascii() from <ctype.h>: Checks if the given character 
+ * is a valid ASCII character (0-127).
+ */
 int	ft_isascii(int c)
 {
 	return ((c >= 0) && (c <= 127));

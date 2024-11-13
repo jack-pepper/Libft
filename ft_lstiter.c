@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Iterates over each node in a linked list and applies a function to each
+ * node's content.
+ */
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst != NULL)

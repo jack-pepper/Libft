@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of memcmp() from <string.h>: Compares two blocks of memory
+ * byte by byte, up to a specified number of bytes.
+ */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char	*s1_p;

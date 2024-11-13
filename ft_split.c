@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Splits a string into a memory allocated array of substrings, 
+ * separated by a specified delimiter.
+ */
 char		**ft_split(char const *s, char c);
 static int	count_tokens(char const *s, char delim);
 static char	**store_tokens(char const *s, char delim, char **array);

@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Returns the last node in a linked list.
+ */
 t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*last_node;

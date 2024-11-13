@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+ * Implementation of toupper() from <ctype.h>: Converts a lowercase character 
+ * to uppercase.
+*/
 int	ft_toupper(int c)
 {
 	if ((c >= 'a') && (c <= 'z'))

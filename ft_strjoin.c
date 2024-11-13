@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of strjoin() from <string.h>: Concatenates two strings 
+ * into a newly allocated string.
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*joined_str;

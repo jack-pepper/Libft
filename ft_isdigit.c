@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+ * Implementation of isdigit() from <ctype.h>: Checks if the given character 
+ * is a numeric digit (0-9).
+*/
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');

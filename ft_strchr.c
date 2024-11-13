@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of strchr() from <string.h>: Searches for the first 
+ * occurrence of a character in a string.
+ */
 char	*ft_strchr(const char *s, int c)
 {
 	if (c < 0 || c > 255)

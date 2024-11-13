@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+ *Implementation of memmove() from <string.h>: Copies a specified number of 
+ bytes from one memory location to another. Handles overlapping memory regions.
+*/
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*dest_uc;

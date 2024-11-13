@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Creates a new node for a linked list, initializing its content and setting 
+ * the next pointer to NULL.
+ */
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;

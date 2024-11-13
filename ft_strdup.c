@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Implementation of strdup() from <string.h>: Allocates memory and copies a 
+ * string into it, returning a pointer to the new string.
+ */
 char	*ft_strdup(const char *s)
 {
 	char	*dup;

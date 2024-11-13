@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Writes a string followed by a newline character 
+ * to a specified file descriptor.
+ */
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (s != NULL)

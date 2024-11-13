@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/* 
+ * Applies a function to each character of a string, passing the index of each 
+ * character as a parameter.
+ */
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
