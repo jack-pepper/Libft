@@ -16,6 +16,8 @@ char	*ft_strrchr(const char *s, int c)
 {
 	const char	*last_char_found = NULL;
 
+	if (c < 0 || c > 255)
+		c = c % 256;
 	while (*s)
 	{
 		if ((unsigned char)*s == (unsigned char)c)

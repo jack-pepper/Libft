@@ -27,7 +27,9 @@ char	**ft_split(char const *s, char c)
 	array = (char **)malloc((nb_tokens + 1) * sizeof(char *));
 	if (array == NULL)
 		return (NULL);
-	store_tokens(s, c, array);
+	array = store_tokens(s, c, array);
+	if (array == NULL)
+		return (NULL);
 	return (array);
 }
 
@@ -41,16 +43,12 @@ static int	count_tokens(char const *s, char delim)
 	while (s[i] != '\0')
 	{
 		while (s[i] == delim && s[i] != '\0')
-		{
 			i++;
-		}
 		if (s[i] != delim && s[i] != '\0')
 		{
 			nb_tokens++;
 			while (s[i] != delim && s[i] != '\0')
-			{
 				i++;
-			}
 		}
 	}
 	return (nb_tokens);
@@ -74,6 +72,8 @@ static char	**store_tokens(char const *s, char delim, char **array)
 			while (s[j + token_len] != delim && s[j + token_len] != '\0')
 				token_len++;
 			array = malloc_storage(array, i, token_len);
+			if (array == NULL)
+				return (NULL);
 			ft_strlcpy(array[i], &s[j], token_len + 1);
 			j += token_len;
 			i++;
